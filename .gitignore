@@ -1,0 +1,5 @@
+node_modules
+.env
+.env.end2end
+.vscode
+dist
