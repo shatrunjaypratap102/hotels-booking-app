@@ -7,8 +7,8 @@ const router =express.Router();
 router.post("/register",[
     check("firstName","First name is required").isString(),
     check("lastName","Last name is required").isString(),
-    check("email","Email is required").isString(),
-    check("firstName","Password with 6 or more characters is required").isLength({min:6}),
+    check("email","Email is required").isEmail(),
+    check("password","Password with 6 or more characters is required").isLength({min:6}),
 ],async(req:Request,res:Response)=>{
     const errors=validationResult(req);
     if(!errors.isEmpty()){
